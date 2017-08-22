@@ -20,9 +20,10 @@ public class SimpleConnection {
             ResultSet resultSet = statement.executeQuery();
             //4. Retrieving values from ResultSet
             while(resultSet.next()){
+                int categoryId = resultSet.getInt(1);
                 String categoryName = resultSet.getString(2);
                 String categoryDescription = resultSet.getString(3);
-                System.out.printf("\nCategory Name: %s\t\t\tDescription: %s", categoryName, categoryDescription);
+                System.out.printf("\nCategory Id: %s\nCategory Name: %s\t\t\tDescription: %s", categoryId, categoryName, categoryDescription);
             }
             //5. Cleanup
             resultSet.close();
